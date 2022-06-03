@@ -204,8 +204,6 @@ if [ "$1" != "-h" ]; then
             fi
         fi
     fi
-
-    
     main $args
 else
     helpview
