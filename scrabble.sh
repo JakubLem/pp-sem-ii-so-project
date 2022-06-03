@@ -201,11 +201,12 @@ if [ "$1" != "-h" ]; then
                 settings_hide_invalid=true
                 echo "[Settings]::Invalid words will be hidden"
             else
-                echo "zle" # TODO boom
+                echo "Invalid args!"
+                exit
             fi
         fi
     else
-        if [ "$1" = "-dictonary" ]; then
+        if [ "$1" = "-kropka" ]; then
             file="$2"
             args=("${args[@]/"-dictonary"}")
             args=("${args[@]/$2}")

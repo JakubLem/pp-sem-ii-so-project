@@ -13,7 +13,7 @@ Help:
 
 ### Developer settings
 
-debug variable is located in https://github.com/JakubLem/pp-sem-ii-so-project/blob/main/scrabble.sh#L182
+```debug``` variable is located in https://github.com/JakubLem/pp-sem-ii-so-project/blob/main/scrabble.sh#L182
 With debug mode you can see more info when script is running.
 
 
