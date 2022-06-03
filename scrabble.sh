@@ -25,6 +25,8 @@ helpview() {
     echo "      hideinvalid"
     echo "          This option will prevent words not accepted by the dictionary from appearing in the summary at all."
     echo ""
+    echo "-dictonary [FILE_PATH]"
+    echo "      This feature allows you to link your own scrabble dictionary"
     echo ""
     echo ""
 }
@@ -37,8 +39,6 @@ lower() {
 
 getwords() {
     words=""
-    file="data.txt"
-    # file="/usr/share/dict/words"
     lines=`cat $file`
     for line in $lines; do
         words="${words} $(lower "$line")"
@@ -184,6 +184,7 @@ settings_ignore_invalid=false
 settings_hide_invalid=false
 invalid_word_message="INVALID"
 valid_word_message="VALID"
+file="/usr/share/dict/words"
 
 
 if [ "$1" != "-h" ]; then
@@ -202,6 +203,12 @@ if [ "$1" != "-h" ]; then
             else
                 echo "zle" # TODO boom
             fi
+        fi
+    else
+        if [ "$1" = "-dictonary" ]; then
+            file="$2"
+            args=("${args[@]/"-dictonary"}")
+            args=("${args[@]/$2}")
         fi
     fi
     main $args
