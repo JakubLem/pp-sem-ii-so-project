@@ -206,7 +206,7 @@ if [ "$1" != "-h" ]; then
             fi
         fi
     else
-        if [ "$1" = "-kropka" ]; then
+        if [ "$1" = "-dictonary" ]; then
             file="$2"
             args=("${args[@]/"-dictonary"}")
             args=("${args[@]/$2}")
